@@ -11,11 +11,11 @@ public class Enum : MonoBehaviour
         BonusBoom,
         Over
     }
-    public enum Menber
+    public enum MenberName
     {
         TokinoSora,
         Roboco,
-        AZKi,
+        AZKI,
         SakuraMiko,
         HoshimachiSuisei,
     }

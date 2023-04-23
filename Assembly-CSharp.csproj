@@ -56,10 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\PuchiBox.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\Script\Enum.cs" />
     <Compile Include="Assets\Script\Puchi.cs" />
+    <Compile Include="Assets\Script\PuchiBox.cs" />
+    <Compile Include="Assets\Script\Enum.cs" />
+    <Compile Include="Assets\Script\Factory\AbsPuchiFactory.cs" />
+    <Compile Include="Assets\Script\Factory\PuchiFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

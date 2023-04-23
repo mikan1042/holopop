@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class PuchiBox : MonoBehaviour
 {
+    const int MAXPUCHI = 40;
     List<Puchi> puchiList = new();
-    // Start is called before the first frame update
+    [SerializeField] private PuchiFactory puchiFactory = null;
+    [SerializeField] private GameObject BOX = null;
+
     void Start()
     {
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         FillPuchi();
     }
+
     private void FillPuchi()
     {
-        if(puchiList.Count < 40)
+        if(puchiList.Count < MAXPUCHI)
         {
-
+            int randomType = Random.Range(0, 5);
+            puchiList.Add(this.puchiFactory.Spawn((Enum.MenberName)randomType, BOX.transform));
         }
     }
 }

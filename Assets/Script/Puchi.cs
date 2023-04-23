@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Puchi : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private int score;
+    [SerializeField] private Enum.MenberName menber;
+    [SerializeField] private Enum.Generation generation;
+    private bool stick;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+

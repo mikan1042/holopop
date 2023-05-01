@@ -5,14 +5,10 @@ using UnityEngine;
 public class PuchiBox : MonoBehaviour
 {
     const int MAXPUCHI = 40;
-    List<Puchi> puchiList = new();
+    public List<Puchi> puchiList { get; private set; } = new();
     [SerializeField] private PuchiFactory puchiFactory = null;
     [SerializeField] private GameObject BOX = null;
-
-    void Start()
-    {
-
-    }
+    [SerializeField] private GameObject spawnPoint = null;
 
     void Update()
     {
@@ -24,7 +20,7 @@ public class PuchiBox : MonoBehaviour
         if(puchiList.Count < MAXPUCHI)
         {
             int randomType = Random.Range(0, 5);
-            puchiList.Add(this.puchiFactory.Spawn((Enum.MenberName)randomType, BOX.transform));
+            puchiList.Add(this.puchiFactory.Spawn((Enum.MenberName)randomType, BOX.transform,spawnPoint.transform.position));
         }
     }
 }

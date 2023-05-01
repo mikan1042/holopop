@@ -4,9 +4,10 @@ using UnityEngine;
 
 public abstract class AbsPuchiFactory<T> : MonoBehaviour
 {
-    public Puchi Spawn(T type, Transform parent)
+    public Puchi Spawn(T type, Transform parent,Vector3 pos)
     {
         Puchi puchi = this.CreatePuchi(type);
+        puchi.transform.position = pos;
         puchi.transform.parent = parent;
 
         return puchi;

@@ -23,7 +23,7 @@ public class TouchController : MonoBehaviour
             if (hit)
             {
                 hit.transform.TryGetComponent(out Puchi puchi);
-                if (puchi && puchi.stick)
+                if (puchi.chain != null)
                 {
                     puchiBox.puchiList.Remove(puchi);
                     Destroy(puchi.gameObject);

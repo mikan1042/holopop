@@ -6,6 +6,7 @@ public class TouchController : MonoBehaviour
 {
     Camera mainCamera;
     PuchiBox puchiBox;
+    [SerializeField] private LayerMask puchiLayer;
 
     private void Awake()
     {
@@ -19,14 +20,12 @@ public class TouchController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            var hit = Physics2D.Raycast(mousePos, transform.forward, Mathf.Infinity);
-            if (hit)
+            var hit = Physics2D.Raycast(mousePos, transform.forward, Mathf.Infinity, puchiLayer.value);
+            if (hit && hit.transform.TryGetComponent(out Puchi puchi))
             {
-                hit.transform.TryGetComponent(out Puchi puchi);
                 if (puchi.chain != null)
                 {
-                    puchiBox.puchiList.Remove(puchi);
-                    Destroy(puchi.gameObject);
+                    puchiBox.DestroyChain(puchi.chain);
                 }
             }
         }

@@ -1,11 +1,9 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PuchiBox : MonoBehaviour
 {
-    /// ** ΩÃ±€≈Ê ** /// 
     private static PuchiBox Instance = null;
     public static PuchiBox GetInstance()
     {
@@ -14,38 +12,55 @@ public class PuchiBox : MonoBehaviour
 
         return Instance;
     }
-    // ** ΩÃ±€≈Ê ** ///
-
 
     const int MAXPUCHI = 40;
-    public List<Puchi> puchiList { get; private set; } = new();
-    public List<Chain> puchiChainList { get; private set; } = new();
+    public HashSet<Puchi> PuchiSet { get; private set; } = new();
+    public HashSet<Chain> ChainSet { get; private set; } = new();
     [SerializeField] private PuchiFactory puchiFactory = null;
     [SerializeField] private GameObject BOX = null;
     [SerializeField] private GameObject spawnPoint = null;
 
+    private float dt = 0f;
     void Update()
     {
-        FillPuchi();
+        dt += Time.deltaTime;
+        if (0.3f <= dt)
+        {
+            FillPuchi();
+            dt = 0f;
+        }
     }
 
     private void FillPuchi()
     {
-        if(puchiList.Count < MAXPUCHI)
+        if (PuchiSet.Count < MAXPUCHI)
         {
             int randomType = Random.Range(0, 5);
-            puchiList.Add(this.puchiFactory.Spawn((Enum.MenberName)randomType, BOX.transform,spawnPoint.transform.position));
+            var offset = Random.insideUnitCircle;
+            var pos = spawnPoint.transform.position + new Vector3(offset.x, offset.y, 0);
+            PuchiSet.Add(this.puchiFactory.Spawn((Enum.MenberName)randomType, BOX.transform, pos));
         }
     }
 
-    public Chain CreateNewChain(Puchi puchiA, Puchi puchiB)
+    public Chain CreateNewChain(Puchi a, Puchi b)
     {
         Chain chain = new Chain();
-        chain.AddPuchiToChain(puchiA);
-        chain.AddPuchiToChain(puchiB);
+        chain.AddPuchiToChain(a);
+        chain.AddPuchiToChain(b);
 
-        puchiChainList.Add(chain);
+        ChainSet.Add(chain);
 
         return chain;
+    }
+
+    public void DestroyChain(Chain c)
+    {
+        foreach (var p in c.puchis)
+        {
+            PuchiSet.Remove(p);
+            Destroy(p.gameObject);
+        }
+
+        ChainSet.Remove(c);
     }
 }

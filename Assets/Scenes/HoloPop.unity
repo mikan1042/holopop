@@ -380,7 +380,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1077436456
@@ -491,7 +491,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1181143439
@@ -650,6 +650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3889567b74c841942b249f68ae7fa353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puchiLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1897244243
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +792,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

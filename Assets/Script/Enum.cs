@@ -21,17 +21,39 @@ public class Enum : MonoBehaviour
     }
 
     public enum Generation
-    { 
-        a,          // 0±â»ý
-        b,          // 1±â»ý
-        c,          // 2±â»ý
-        Fantasy,    // 3±â»ý
-        Force,      // 4±â»ý
-        Five,       // 5±â»ý
-        HoloX,      // 6±â»ý
-        Gamers,     // °ÔÀÌ¸ÓÁî
+    {
+        a,          // 0ï¿½ï¿½ï¿½
+        b,          // 1ï¿½ï¿½ï¿½
+        c,          // 2ï¿½ï¿½ï¿½
+        Fantasy,    // 3ï¿½ï¿½ï¿½
+        Force,      // 4ï¿½ï¿½ï¿½
+        Five,       // 5ï¿½ï¿½ï¿½
+        HoloX,      // 6ï¿½ï¿½ï¿½
+        Gamers,     // ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½
+    }
+}
+
+namespace Holopop.Enum
+{
+    public enum MemberName
+    {
+        AZKI,
+        Chika,
+        HoshimachiSuisei,
+        Roboco,
+        SakuraMiko,
+        TokinoSora,
     }
 
-
-
+    public enum Generation
+    {
+        a,          // 0ï¿½ï¿½ï¿½
+        b,          // 1ï¿½ï¿½ï¿½
+        c,          // 2ï¿½ï¿½ï¿½
+        Fantasy,    // 3ï¿½ï¿½ï¿½
+        Force,      // 4ï¿½ï¿½ï¿½
+        Five,       // 5ï¿½ï¿½ï¿½
+        HoloX,      // 6ï¿½ï¿½ï¿½
+        Gamers,     // ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½
+    }
 }

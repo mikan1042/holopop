@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 128058403702035616}
   - component: {fileID: 128058403702035631}
   - component: {fileID: 1541509714465495447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TokinoSora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 100
+  chain: {fileID: 0}

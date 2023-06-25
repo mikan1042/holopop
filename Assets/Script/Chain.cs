@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chain : MonoBehaviour
+public class Chain
 {
-   public List<Puchi> puchis = new List<Puchi>();
-    public void AddPuchiToChain(Puchi puchi)
+    public List<Puchi> puchis = new List<Puchi>();
+    public void AddPuchiToChain(Puchi x)
     {
-        puchis.Add(puchi);
+        x.chain = this;
+        puchis.Add(x);
     }
 }

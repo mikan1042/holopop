@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // ** ½Ì±ÛÅæ ** // 
+    // ** ï¿½Ì±ï¿½ï¿½ï¿½ ** // 
     private static GameManager Instance = null;
     public static GameManager GetInstance()
     {
@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
         return Instance;
     }
-    // ** ½Ì±ÛÅæ ** // 
+    // ** ï¿½Ì±ï¿½ï¿½ï¿½ ** // 
 
     private int score;
     private int gold;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        
+
     }
 
     public void ChangeState(Enum.GameState state)
@@ -44,6 +44,4 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
-
 }

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 128058403702035617}
   - component: {fileID: 128058403702035616}
   - component: {fileID: 128058403702035631}
-  m_Layer: 0
+  - component: {fileID: 3535785017973122356}
+  m_Layer: 6
   m_Name: ChikaPuchi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,3 +124,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.03, y: 0.32}
   m_Size: {x: 2.25, y: 0.0001}
   m_Direction: 0
+--- !u!114 &3535785017973122356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128058403702035629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68afc18ed8d48d042b8c01fdf34384d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat:
+    score: 0
+    gold: 0
+    generation: 0
+    member: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chain
 {
-    public List<Puchi> puchis = new List<Puchi>();
+    public HashSet<Puchi> puchis = new HashSet<Puchi>();
     public void AddPuchiToChain(Puchi x)
     {
         x.chain = this;

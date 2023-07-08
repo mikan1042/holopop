@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // ** �̱��� ** // 
     private static GameManager Instance = null;
     public static GameManager GetInstance()
     {
@@ -13,19 +12,14 @@ public class GameManager : MonoBehaviour
 
         return Instance;
     }
-    // ** �̱��� ** // 
 
     private int score;
     private int gold;
-    private Enum.GameState gameState = Enum.GameState.Ready;
+    [SerializeField] private Enum.GameState gameState;
 
-    private void Start()
+    private void Awake()
     {
-        ChangeState(Enum.GameState.Start);
-    }
-    private void Update()
-    {
-
+        Instance = this;
     }
 
     public void ChangeState(Enum.GameState state)

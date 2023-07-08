@@ -20,7 +20,14 @@ public class PuchiBox : MonoBehaviour
     [SerializeField] private GameObject BOX = null;
     [SerializeField] private GameObject spawnPoint = null;
 
+    [SerializeField] private SkillHolder skillHolder = null;
+    [SerializeField] private FeverHolder feverHolder = null;
+
     private float dt = 0f;
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Update()
     {
         dt += Time.deltaTime;
@@ -55,8 +62,11 @@ public class PuchiBox : MonoBehaviour
 
     public void DestroyChain(Chain c)
     {
+        feverHolder.FillGauge(c);
+        skillHolder.FillGauge(c);
         foreach (var p in c.puchis)
         {
+            if(p == null) continue;
             PuchiSet.Remove(p);
             Destroy(p.gameObject);
         }

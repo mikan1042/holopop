@@ -963,6 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c58b83498b735f43b524c13558bac23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUpdating: 0
   gaugeImage: {fileID: 303506280}
 --- !u!1 &929020181
 GameObject:
@@ -1199,6 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5ffd370c0b9a14a9c213b609d30a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gametimer: {fileID: 802921606}
   gameState: 0
 --- !u!4 &1181143441
 Transform:

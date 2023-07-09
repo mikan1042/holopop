@@ -1,9 +1,10 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MainGameTimer : MonoBehaviour
 {
-    bool isUpdating;
+    public bool isUpdating;
     float gameOverTime;
     float currentTime;
 
@@ -14,9 +15,8 @@ public class MainGameTimer : MonoBehaviour
 
     private void Start()
     {
-        isUpdating = true;
+        isUpdating = false;
         gameOverTime = 60f;
-        GameManager.GetInstance().ChangeState(Enum.GameState.Start);
 
         targetFillAmount = 0f;
         currentFillAmount = 1f;
@@ -44,14 +44,14 @@ public class MainGameTimer : MonoBehaviour
     }
     void AddTimerToTime(float time)
     {
-
+        currentTime += time;
     }
     void StopTimer(float duration)
     {
-
+        isUpdating = false;
     }
     void ReStartTimer(float duration)
     {
-
+        isUpdating = true;
     }
 }
